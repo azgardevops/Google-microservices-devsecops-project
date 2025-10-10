@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        DOCKER_NAME  = 'harishnshetty/paymentservice'
+        DOCKER_NAME  = 'azgar123/paymentservice'
         IMAGE_NAME   = 'paymentservice'
     }
 
