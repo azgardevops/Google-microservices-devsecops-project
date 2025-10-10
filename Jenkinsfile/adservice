@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         
-        DOCKER_NAME  = 'harishnshetty/adservice'
+        DOCKER_NAME  = 'azgar123/adservice'
         IMAGE_NAME   = 'adservice'
     }
 
@@ -19,7 +19,7 @@ pipeline {
 
         stage("Git Checkout") {
             steps {
-                git branch: 'main', url: 'https://github.com/harishnshetty/Google-microservices-devsecops-project.git'
+                git branch: 'main', url: 'https://github.com/azgardevops/Google-microservices-devsecops-project.git'
             }
         }
 
@@ -109,8 +109,8 @@ pipeline {
                             <p>Started by: ${buildUser}</p>
                             <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
                         """,
-                        to: 'harishn662@gmail.com',
-                        from: 'harishn662@gmail.com',
+                        to: 'azgaralidevops@gmail.com',
+                        from: 'azgaralidevops@gmail.com',
                         mimeType: 'text/html',
                         attachmentsPattern: 'dependency-check-report.xml,trivy-fs-report.txt,trivy-image-ad.json,trivy-image-ad.txt'
                     )
