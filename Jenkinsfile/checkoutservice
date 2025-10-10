@@ -238,8 +238,8 @@ pipeline {
                             <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
 
                         """,
-                        to: 'azgarali@gmail.com',
-                        from: 'azgarali@gmail.com',
+                        to: 'azgaralidevops@gmail.com',
+                        from: 'azgaralidevops@gmail.com',
                         mimeType: 'text/html',
                         attachmentsPattern: 'trivy-fs-report.txt,trivy-image-checkoutservice.json,trivy-image-checkoutservice.txt,gosec-report.json'
                     )
