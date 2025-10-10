@@ -28,7 +28,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: harishnshetty/emailservice:latest
+        image: azgar123/emailservice:latest
         ports:
         - containerPort: 8080
         env:
