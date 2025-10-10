@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         SCANNER_HOME = tool 'sonar-scanner'
-        DOCKER_NAME  = 'harishnshetty/cartservice'
+        DOCKER_NAME  = 'azgar123/cartservice'
         IMAGE_NAME   = 'cartservice'
     }
 
@@ -176,8 +176,8 @@ pipeline {
                             <p>Started by: ${buildUser}</p>
                             <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
                         """,
-                        to: 'harishn662@gmail.com',
-                        from: 'harishn662@gmail.com',
+                        to: 'azgaralidevops@gmail.com',
+                        from: 'azgaralidevops@gmail.com',
                         mimeType: 'text/html',
                         attachmentsPattern: 'trivy-fs-report.txt,trivy-image-cart.json,trivy-image-cart.txt,dependency-check-report.xml'
                     )
