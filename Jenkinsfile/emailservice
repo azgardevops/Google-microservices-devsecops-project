@@ -119,7 +119,7 @@ pipeline {
                 dir('src/emailservice') {
                     withCredentials([string(credentialsId: 'docker-cred', variable: 'dockerpwd')]) {
                         sh '''
-                        docker login -u harishnshetty -p ${dockerpwd}
+                        docker login -u azgar123 -p ${dockerpwd}
                         docker push ${IMAGE_TAG}
                         docker tag ${IMAGE_NAME} ${DOCKER_NAME}:latest
                         docker push ${DOCKER_NAME}:latest
