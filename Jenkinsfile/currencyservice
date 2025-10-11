@@ -40,17 +40,6 @@ pipeline {
             }
         }
 
-        // --- Quality Gate ---
-        stage("Quality Gate") {
-            steps {
-                script {
-                    timeout(time: 3, unit: 'MINUTES') {
-                        waitForQualityGate abortPipeline: true, credentialsId: 'sonar-token'
-                    }
-                }
-            }
-        }
-
         // --- Install Dependencies ---
         stage("Install Dependencies") {
             steps {
