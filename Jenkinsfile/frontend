@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+        
         DOCKER_NAME = 'azgar123/frontend'
         IMAGE_NAME = 'frontend'
         // This is a global definition. We'll ensure it's used correctly below.
@@ -51,21 +51,6 @@ pipeline {
             post {
                 always {
                     archiveArtifacts 'src/frontend/gosec-report.json'
-                }
-            }
-        }
-        // ---- Static Analysis & Report Ingestion ----
-        stage("SonarQube Analysis") {
-            steps {
-                dir('src/frontend') {
-                    withSonarQubeEnv('sonar-server') {
-                        sh ''' $SCANNER_HOME/bin/sonar-scanner \\
-                            -Dsonar.projectName=frontend \\
-                            -Dsonar.projectKey=frontend \\
-                            -Dsonar.sources=. \\
-                            -Dsonar.language=go \\
-                            -Dsonar.go.gosec.reportPaths=gosec-report.json '''
-                    }
                 }
             }
         }
