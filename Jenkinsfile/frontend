@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         
-        DOCKER_NAME = 'azgar123'
+        DOCKER_NAME = 'azgar123/frontend'
         IMAGE_NAME = 'frontend'
         // This is a global definition. We'll ensure it's used correctly below.
         GO_BIN_PATH = '$(go env GOPATH)/bin'
@@ -158,7 +158,7 @@ pipeline {
             steps {
                 dir('src/frontend') {
                     script {
-                        withDockerRegistry(credentialsId: 'docker', toolName: 'dockerpwd') {
+                        withCredentials([string(credentialsId: 'docker', variable: 'dockerpwd')]) {
                             sh "docker login -u azgar123 -p ${dockerpwd}"
                             sh "docker tag $IMAGE_NAME ${env.IMAGE_TAG}"
                             sh "docker push ${env.IMAGE_TAG}"
