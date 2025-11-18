@@ -6,7 +6,6 @@ pipeline {
     }
 
     environment {
-        #SCANNER_HOME = tool 'sonar-scanner'
         DOCKER_NAME = 'azgar123/checkoutservice'
         IMAGE_NAME = 'checkoutservice'
         // This is a global definition. We'll ensure it's used correctly below.
