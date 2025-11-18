@@ -54,20 +54,7 @@ pipeline {
             }
         }
         // ---- Static Analysis & Report Ingestion ----
-        #stage("SonarQube Analysis") {
-         #   steps {
-          #      dir('src/checkoutservice') {
-           #         withSonarQubeEnv('sonar-server') {
-            #            sh ''' $SCANNER_HOME/bin/sonar-scanner \\
-             #               -Dsonar.projectName=checkoutservice \\
-              #              -Dsonar.projectKey=checkoutservice \\
-               #             -Dsonar.sources=. \\
-                #            -Dsonar.language=go \\
-                 #           -Dsonar.go.gosec.reportPaths=gosec-report.json '''
-                  #  }
-                #}
-            #}
-        #}
+ 
 
 
         // --- Core CI Stages start after successful Quality Gate ---
