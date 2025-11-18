@@ -196,7 +196,7 @@ pipeline {
     } // Closing brace for 'stages' block
 
     // --- Final Check (Kept at the end) ---
-    post {
+     post {
         always {
             dir('src/frontend') {
                 script {
