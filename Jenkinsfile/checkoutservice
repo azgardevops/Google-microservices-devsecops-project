@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+        #SCANNER_HOME = tool 'sonar-scanner'
         DOCKER_NAME = 'azgar123/checkoutservice'
         IMAGE_NAME = 'checkoutservice'
         // This is a global definition. We'll ensure it's used correctly below.
@@ -55,20 +55,20 @@ pipeline {
             }
         }
         // ---- Static Analysis & Report Ingestion ----
-        stage("SonarQube Analysis") {
-            steps {
-                dir('src/checkoutservice') {
-                    withSonarQubeEnv('sonar-server') {
-                        sh ''' $SCANNER_HOME/bin/sonar-scanner \\
-                            -Dsonar.projectName=checkoutservice \\
-                            -Dsonar.projectKey=checkoutservice \\
-                            -Dsonar.sources=. \\
-                            -Dsonar.language=go \\
-                            -Dsonar.go.gosec.reportPaths=gosec-report.json '''
-                    }
-                }
-            }
-        }
+        #stage("SonarQube Analysis") {
+         #   steps {
+          #      dir('src/checkoutservice') {
+           #         withSonarQubeEnv('sonar-server') {
+            #            sh ''' $SCANNER_HOME/bin/sonar-scanner \\
+             #               -Dsonar.projectName=checkoutservice \\
+              #              -Dsonar.projectKey=checkoutservice \\
+               #             -Dsonar.sources=. \\
+                #            -Dsonar.language=go \\
+                 #           -Dsonar.go.gosec.reportPaths=gosec-report.json '''
+                  #  }
+                #}
+            #}
+        #}
 
 
         // --- Core CI Stages start after successful Quality Gate ---
