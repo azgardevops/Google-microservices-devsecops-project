@@ -60,7 +60,7 @@ pipeline {
         stage("Push to DockerHub") {
             steps {
                 dir('src/adservice') {
-                    withCredentials([string(credentialsId: 'docker-cred', variable: 'dockerpwd')]) {
+                    withCredentials([string(credentialsId: 'docker', variable: 'dockerhub')]) {
                         sh '''
                         docker login -u harishnshetty -p ${dockerpwd}
                         docker push ${IMAGE_TAG}
