@@ -57,7 +57,6 @@ pipeline {
                 }
             }
         }
-        */
 
         stage("Quality Gate") {
             steps {
@@ -68,6 +67,7 @@ pipeline {
                 }
             }
         }
+        */
 
         // --- Install Dependencies ---
         stage("Install Dependencies") {
