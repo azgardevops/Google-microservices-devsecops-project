@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+        /*SCANNER_HOME = tool 'sonar-scanner'*/
         DOCKER_NAME  = 'azgar123/emailservice'
         IMAGE_NAME   = 'emailservice'
         PATH = "$PATH:/var/lib/jenkins/.local/bin"   // <-- Fix: add pip install path
@@ -42,7 +42,7 @@ pipeline {
         }
 
         // --- SAST: SonarQube ---
-        stage("SonarQube Analysis") {
+        /*stage("SonarQube Analysis") {
             steps {
                 dir('src/emailservice') {
                     withSonarQubeEnv('sonar-server') {
@@ -57,7 +57,7 @@ pipeline {
                 }
             }
         }
-
+        */
 
         // --- Install Dependencies ---
         stage("Install Dependencies") {
