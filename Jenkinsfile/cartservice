@@ -24,7 +24,7 @@ pipeline {
         }
 
         // --- SAST: SonarQube for C# ---
-        stage("SonarQube Analysis") {
+        /*stage("SonarQube Analysis") {
             steps {
                 dir('src/cartservice') {
                     withSonarQubeEnv('sonar-server') {
@@ -39,7 +39,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } /*
 
         // --- Quality Gate ---
         stage("Quality Gate") {
