@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+      /*SCANNER_HOME = tool 'sonar-scanner'*/
         DOCKER_NAME  = 'azgar123/cartservice'
         IMAGE_NAME   = 'cartservice'
     }
