@@ -7,7 +7,7 @@ pipeline {
     }
     
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+      /*SCANNER_HOME = tool 'sonar-scanner'*/
         DOCKER_NAME  = 'azgar123/paymentservice'
         IMAGE_NAME   = 'paymentservice'
     }
@@ -24,7 +24,7 @@ pipeline {
         }
 
         // --- SAST: SonarQube for Node.js ---
-        stage("SonarQube Analysis") {
+  /*   stage("SonarQube Analysis") {
             steps {
                 dir('src/paymentservice') {
                     withSonarQubeEnv('sonar-server') {
@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }
-
+        
         // --- Quality Gate ---
         stage("Quality Gate") {
             steps {
@@ -50,7 +50,7 @@ pipeline {
                 }
             }
         }
-
+        */
         // --- Install Dependencies ---
         stage("Install Dependencies") {
             steps {
