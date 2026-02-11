@@ -39,7 +39,7 @@ pipeline {
                     }
                 }
             }
-        } /*
+        } 
 
         // --- Quality Gate ---
         stage("Quality Gate") {
@@ -59,6 +59,7 @@ pipeline {
                 }
             }
         }
+        */
         // --- Build & Unit Tests ---
         stage("Build & Test") {
             steps {
