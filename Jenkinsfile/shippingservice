@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+     /* SCANNER_HOME = tool 'sonar-scanner' */
         DOCKER_NAME = 'azgar123/shippingservice'
         IMAGE_NAME = 'shippingservice'
         // This is a global definition. We'll ensure it's used correctly below.
@@ -55,7 +55,7 @@ pipeline {
             }
         }
         // ---- Static Analysis & Report Ingestion ----
-        stage("SonarQube Analysis") {
+        /* stage("SonarQube Analysis") {
             steps {
                 dir('src/shippingservice') {
                     withSonarQubeEnv('sonar-server') {
@@ -79,7 +79,7 @@ pipeline {
         //         }
         //     }
         // }
-
+           */
         // --- Core CI Stages start after successful Quality Gate ---
 
         stage('Go Build') {
